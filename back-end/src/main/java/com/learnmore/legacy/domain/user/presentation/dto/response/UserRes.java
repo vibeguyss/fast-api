@@ -5,6 +5,7 @@ import com.learnmore.legacy.domain.user.model.User;
 public record UserRes(
         Long userId,
         String name,
+        String email,
         String imageUrl
 ) {
     public static UserRes from(User user) {
