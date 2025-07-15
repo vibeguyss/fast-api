@@ -76,7 +76,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:8080","http://54.79.145.51:8080","https://api.legacygame.site","https://www.legacygame.site","https://legacygame.site","http://localhost:63345"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:8080","http://54.79.145.51:8080","https://api.legacygame.site","https://www.legacygame.site","https://legacygame.site","http://localhost:63345","http://localhost:5173"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
