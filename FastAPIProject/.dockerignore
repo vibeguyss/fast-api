@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+cache/
+ollama/
+ollama_models/
+models/
+*.gguf
+*.bin
+*.ckpt
+*.pt
+*.log
