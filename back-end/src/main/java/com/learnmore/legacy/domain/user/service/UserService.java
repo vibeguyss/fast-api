@@ -26,4 +26,13 @@ public class UserService {
         return userJpaRepo.existsById(userId);
     }
 
+    public boolean existsByEmail(String email) {
+        return userJpaRepo.existsByEmail(email);
+    }
+
+    public User findByEmail(String email) {
+        return userJpaRepo.findByEmail(email)
+                .orElseThrow(() -> new CustomException(UserError.USER_NOT_FOUND));
+    }
+
 }

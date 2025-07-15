@@ -31,9 +31,15 @@ public class AuthUseCase {
     private final RefreshTokenDao refreshTokenDao;
 
     public TokenRes signIn(SingInReq req) {
-        Long id =req.id();
-        if (userService.existsByUserId(id)){
-            return jwtProvider.generateToken(id.toString());
+        String email =req.email();
+        if (userService.existsByEmail(email) ){
+            User user = userService.findByEmail(email);
+            if (user.getPassword().equals(req.password())){
+                Long id = user.getUserId();
+                return jwtProvider.generateToken(id.toString());
+            }else {
+                throw new CustomException(UserError.PW);
+            }
         }else {
             throw new CustomException(UserError.USER_NOT_FOUND);
         }
@@ -43,6 +49,8 @@ public class AuthUseCase {
         if (!userService.existsByUserId(req.id())){
             User user = User.builder()
                     .userId(req.id())
+                    .email(req.email())
+                    .password(req.password())
                     .role(req.userRole())
                     .imageUrl(null)
                     .build();

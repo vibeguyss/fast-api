@@ -34,6 +34,15 @@ public class User {
     @Column(name = "role", nullable = false)
     private UserRole role;
 
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "email", nullable = false)
+    private String password;
+
     @Column(name = "image_url", length = 1000, nullable = false)
     private String imageUrl;
 
