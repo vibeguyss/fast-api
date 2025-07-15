@@ -14,7 +14,7 @@ def chat(prompt_input: PromptInput):
         prompt = "한국어로 대답해줘 "
         print(prompt + prompt_input.prompt,)
         response = requests.post(
-            "http://localhost:11434/api/generate",
+            "https://1da997ecbc0a.ngrok-free.app",
             headers={"Content-Type": "application/json"},
             data=json.dumps({
                 "model": "llama3",
