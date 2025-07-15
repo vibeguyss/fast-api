@@ -52,7 +52,7 @@ public class AuthUseCase {
                     .email(req.email())
                     .password(req.password())
                     .role(req.userRole())
-                    .imageUrl(null)
+                    .imageUrl("https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.naver.com%2Flattepain%2F221803111318%3FviewType%3Dpc&psig=AOvVaw2onxVOJsizeOzfFq3JvxTh&ust=1752685891535000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIiZnvGtv44DFQAAAAAdAAAAABAE")
                     .build();
             userService.saveUser(user);
 
