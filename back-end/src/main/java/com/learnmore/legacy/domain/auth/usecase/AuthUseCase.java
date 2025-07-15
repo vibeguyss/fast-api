@@ -46,9 +46,8 @@ public class AuthUseCase {
     }
 
     public void signup(SignupReq req) {
-        if (!userService.existsByUserId(req.id())){
+        if (!userService.existsByEmail(req.email())){
             User user = User.builder()
-                    .userId(req.id())
                     .email(req.email())
                     .password(req.password())
                     .role(req.userRole())
