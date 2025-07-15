@@ -11,6 +11,7 @@ public record UserRes(
         return new UserRes(
                 user.getUserId(),
                 user.getName(),
+                user.getEmail(),
                 user.getImageUrl()
         );
     }
