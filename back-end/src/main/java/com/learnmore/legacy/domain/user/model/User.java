@@ -40,7 +40,7 @@ public class User {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "image_url", length = 1000, nullable = false)
