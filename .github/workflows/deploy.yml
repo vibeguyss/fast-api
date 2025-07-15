@@ -22,7 +22,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Make Gradle executable
-        run: chmod +x ./spring-app/gradlew
+        run: chmod +x ./back-end/gradlew
 
       - name: Gradle Cache
         uses: actions/cache@v4
@@ -36,7 +36,7 @@ jobs:
 
       - name: Build Spring bootJar (skip test)
         run: |
-          cd spring-app
+          cd back-end
           ./gradlew bootJar -x test
 
       - name: Docker login
